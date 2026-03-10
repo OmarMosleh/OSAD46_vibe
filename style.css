@@ -1,0 +1,322 @@
+/* 
+ * Sorting Algorithm Visualizer Stylesheet
+ * Clean, colorful, and absolutely NO GRADIENTS (we made a promise!)
+ */
+
+/* Global reset - because browsers have opinions we don't need */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling - the foundation of our visual masterpiece */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e;
+    color: #eee;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Main container - keeps everything centered and cozy */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header styling - make it pop! */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #16213e;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #4ecca3;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #a8a8a8;
+}
+
+/* Controls panel - where all the buttons and sliders live happily */
+.controls-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #16213e;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Control group - keeps related controls together like a family */
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Labels - clear and readable */
+.controls-panel label {
+    font-weight: bold;
+    color: #4ecca3;
+    white-space: nowrap;
+}
+
+/* Select dropdown styling - make it look nice */
+select {
+    padding: 8px 12px;
+    border: 2px solid #4ecca3;
+    border-radius: 5px;
+    background-color: #0f3460;
+    color: #eee;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+select:hover {
+    border-color: #5fd4ac;
+}
+
+select:focus {
+    outline: none;
+    border-color: #5fd4ac;
+}
+
+/* Number input styling - simple and clean */
+input[type="number"] {
+    padding: 8px 12px;
+    border: 2px solid #4ecca3;
+    border-radius: 5px;
+    background-color: #0f3460;
+    color: #eee;
+    font-size: 1rem;
+    width: 80px;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #5fd4ac;
+}
+
+/* Range slider (speed control) - smooth and satisfying */
+input[type="range"] {
+    width: 150px;
+    cursor: pointer;
+}
+
+/* Speed value display - shows current speed */
+#speed-value {
+    min-width: 30px;
+    text-align: center;
+    color: #4ecca3;
+    font-weight: bold;
+}
+
+/* Button base styling - the foundation for all buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Primary button - for the main action (Start!) */
+.btn-primary {
+    background-color: #4ecca3;
+    color: #1a1a2e;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #5fd4ac;
+}
+
+/* Secondary button - for supporting actions */
+.btn-secondary {
+    background-color: #0f3460;
+    color: #4ecca3;
+    border: 2px solid #4ecca3;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #164a6e;
+}
+
+/* Danger button - for stopping things (use with caution!) */
+.btn-danger {
+    background-color: #e94560;
+    color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background-color: #f05d77;
+}
+
+/* Custom input section - appears when user wants manual control */
+.custom-input-section {
+    padding: 20px;
+    background-color: #16213e;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.custom-input-section.hidden {
+    display: none;
+}
+
+.custom-input-section label {
+    display: block;
+    margin-bottom: 10px;
+    color: #4ecca3;
+    font-weight: bold;
+}
+
+/* Text input for custom array */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #4ecca3;
+    border-radius: 5px;
+    background-color: #0f3460;
+    color: #eee;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #5fd4ac;
+}
+
+/* Info panel - displays algorithm statistics */
+.info-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #16213e;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-label {
+    font-size: 0.9rem;
+    color: #a8a8a8;
+}
+
+.info-item span:last-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4ecca3;
+}
+
+/* Visualization container - the stage for our sorting show */
+.visualization-container {
+    background-color: #16213e;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    overflow-x: auto;
+}
+
+/* Bar styling - each bar represents an array element */
+.bar {
+    background-color: #4ecca3;
+    border-radius: 3px 3px 0 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+/* Bar states - different colors for different actions */
+.bar.default {
+    background-color: #4ecca3;
+}
+
+.bar.comparing {
+    background-color: #ffa500;
+}
+
+.bar.swapping {
+    background-color: #e94560;
+}
+
+.bar.sorted {
+    background-color: #5fd4ac;
+}
+
+/* Bar value display - shows the number on hover */
+.bar::after {
+    content: attr(data-value);
+    position: absolute;
+    top: -20px;
+    font-size: 0.8rem;
+    color: #a8a8a8;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.bar:hover::after {
+    opacity: 1;
+}
+
+/* Responsive design - because screens come in all shapes and sizes */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .controls-panel {
+        flex-direction: column;
+    }
+
+    .control-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    input[type="range"] {
+        width: 100px;
+    }
+}
